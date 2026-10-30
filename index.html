@@ -44,6 +44,9 @@ const pages=[
 'images/042.png',
 'images/043.png'
 ];
+  for (let i = 0; i < pages.length; i++) {
+  pages[i] = pages[i].replace(/^images\//, '');
+  }
 const header=document.querySelector('header');const resizeStage=()=>document.documentElement.style.setProperty('--header-height',header.getBoundingClientRect().height+'px');window.addEventListener('resize',resizeStage);if(window.ResizeObserver)new ResizeObserver(resizeStage).observe(header);resizeStage();
 const stage=document.getElementById('stage');let zoomed=false,zoomScale=1,panX=0,panY=0;
 const mobileTouch=()=>window.matchMedia('(pointer:coarse)').matches;
